@@ -1,0 +1,32 @@
+.card-container {
+  width: 193px;
+  height: 280px;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-rows: 35% 65%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px 1px rgba(43, 42, 42, 0.295);
+  margin: 10px;
+  cursor: pointer;
+  h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &:hover {
+    box-shadow: 0 0 6px 2px rgba(2, 2, 2, 0.897);
+  }
+  .cases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .tab {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .count {
+        font-size: 25px;
+      }
+    }
+  }
+}

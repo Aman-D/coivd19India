@@ -1,0 +1,25 @@
+.appContainer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(27, 27, 27);
+  .appTitle {
+    color: white;
+    margin: 10px;
+    font-size: 50px;
+  }
+  .appSubContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 100px;
+
+    .stateDistrictContainer {
+      background-color: rgb(255, 255, 255);
+      display: grid;
+      grid-template-columns: 35% 65%;
+      height: 95vh;
+      box-shadow: 0 0 22px 1px rgba(5, 5, 5, 0.781);
+    }
+  }
+}

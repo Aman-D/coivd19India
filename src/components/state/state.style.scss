@@ -1,0 +1,10 @@
+.state-container {
+  min-height: 30vh;
+  background-color: rgba(219, 219, 219, 0.404);
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  justify-content: center;
+}

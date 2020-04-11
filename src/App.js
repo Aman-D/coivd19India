@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import DailyArea from "./components/daily/daily.component";
+import DistrictArea from "./components/district/district.component";
+import StateArea from "./components/state/state.component";
+
+import { fetchData, fetchDailyData } from "./api/api";
+
+import { setData, setCurrentDistrict } from "./redux/app/app.action";
+import { setChartData } from "./redux/chart/chart.action";
+import "./App.scss";
+
+class App extends React.Component {
+  async componentDidMount() {
+    const data = await fetchData();
+    const dailyData = await fetchDailyData();
+
+    this.props.setData(data);
+    this.props.setCurrentState("Andhra Pradesh");
+    this.props.setChartData(dailyData);
+  }
+  render() {
+    return (
+      <div className="appContainer">
+        <h1 className="appTitle">Covid Statics In India</h1>
+        <DailyArea />
+        <div className="appSubContainer">
+          <h1 className="appTitle">State And District Wise Stats</h1>
+          <div className="stateDistrictContainer">
+            <DistrictArea />
+            <StateArea />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setData: (data) => dispatch(setData(data)),
+  setCurrentState: (state) => dispatch(setCurrentDistrict(state)),
+  setChartData: (chart_data) => dispatch(setChartData(chart_data)),
+});
+export default connect(null, mapDispatchToProps)(App);
