@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import DailyArea from "./components/daily/daily.component";
 import DistrictArea from "./components/district/district.component";
 import StateArea from "./components/state/state.component";
-
+import Video from "./components/covid-video/video.component";
 import { fetchData, fetchDailyData } from "./api/api";
 
 import { setData, setCurrentDistrict } from "./redux/app/app.action";
@@ -15,7 +15,6 @@ class App extends React.Component {
   async componentDidMount() {
     const data = await fetchData();
     const dailyData = await fetchDailyData();
-
     this.props.setData(data);
     this.props.setCurrentState("Andhra Pradesh");
     this.props.setChartData(dailyData);
@@ -31,6 +30,9 @@ class App extends React.Component {
             <DistrictArea />
             <StateArea />
           </div>
+        </div>
+        <div className="videoContainer">
+          <Video />
         </div>
       </div>
     );

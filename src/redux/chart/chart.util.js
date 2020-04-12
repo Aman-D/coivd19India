@@ -5,7 +5,6 @@ export const getCategories = (data) => {
 };
 
 export const getSeries = (data) => {
-  console.log(data);
   const arr = data.cases_time_series;
   const totalconfirmed = arr.map(({ totalconfirmed }) => totalconfirmed);
   const totaldeceased = arr.map(({ totaldeceased }) => totaldeceased);

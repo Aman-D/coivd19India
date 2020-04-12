@@ -1,6 +1,6 @@
 import { stateActionTypes } from "./app.actionType";
 import { getState, getDistrict, setCurrentDist } from "./app.utils";
-import { setCurrentDistrict } from "./app.action";
+// import { setCurrentDistrict } from "./app.action";
 const INITIAL_STATE = {
   state: [],
   district: [],

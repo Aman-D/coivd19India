@@ -9,9 +9,15 @@ const Card = ({ data, setCurrentDistrict }) => {
 
   return (
     <div
+      id="card-container"
       className="card-container"
       onClick={() => {
         setCurrentDistrict(state);
+      }}
+      style={{
+        backgroundColor: `rgba(33,200,${252 - confirmed * 0.001},${
+          recovered !== "0" ? (confirmed / recovered) * 0.1 : 0.1
+        })`,
       }}
     >
       <h1 className="title">{state}</h1>

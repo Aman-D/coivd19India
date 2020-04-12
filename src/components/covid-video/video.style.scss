@@ -1,0 +1,19 @@
+.video-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .video-title {
+    color: white;
+    margin: 10px;
+    font-size: 2rem;
+  }
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .iframe-container {
+      width: max-content;
+      margin: 30px;
+    }
+  }
+}

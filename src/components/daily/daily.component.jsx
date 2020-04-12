@@ -43,10 +43,16 @@ const DailyArea = ({ categories, series }) => {
       },
 
       xaxis: {
+        type: "datetime",
         categories: categories,
-        title: {
-          text: "Dates",
+
+        axisTicks: {
+          show: true,
+          borderType: "solid",
+          color: "#78909C",
+          height: 6,
         },
+        tickPlacement: "on",
       },
       yaxis: {
         title: {
@@ -55,6 +61,10 @@ const DailyArea = ({ categories, series }) => {
             fontSize: "15px",
           },
         },
+      },
+      legend: {
+        show: true,
+        position: "top",
       },
     },
 
@@ -69,7 +79,8 @@ const DailyArea = ({ categories, series }) => {
           series={data.series}
           type="line"
           width="100%"
-          height="100%"
+          height="450px"
+          className="stats"
         />
       </div>
     </div>

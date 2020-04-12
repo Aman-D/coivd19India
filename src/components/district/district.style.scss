@@ -6,9 +6,10 @@
   padding: 50px;
   display: flex;
   flex-direction: column;
+  position: relative;
   .dist-title {
     color: white;
-    font-size: 23px;
+    font-size: 2rem;
   }
   .dist-card {
     display: flex;
