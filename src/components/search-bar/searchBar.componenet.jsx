@@ -14,7 +14,7 @@ const SearchBar = ({ filterState }) => {
         type="text"
         name="search"
         onChange={handelChange}
-        placeholder="Search States"
+        placeholder="Type To Search States"
       />
     </div>
   );
