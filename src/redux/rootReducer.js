@@ -7,7 +7,7 @@ import { chartReducer } from "./chart/chart.reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [],
+  whitelist: ["chart", "app"],
 };
 
 const rootReducer = combineReducers({

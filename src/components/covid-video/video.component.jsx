@@ -24,7 +24,7 @@ const Video = () => (
           width="500"
           height="305"
           src="https://www.youtube.com/embed/9Ay4u7OYOhA"
-          frameborder="0"
+          frameborder="5"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>

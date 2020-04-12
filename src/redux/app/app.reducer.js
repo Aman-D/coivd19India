@@ -1,9 +1,15 @@
 import { stateActionTypes } from "./app.actionType";
-import { getState, getDistrict, setCurrentDist } from "./app.utils";
+import {
+  getState,
+  getDistrict,
+  setCurrentDist,
+  filterState,
+} from "./app.utils";
 // import { setCurrentDistrict } from "./app.action";
 const INITIAL_STATE = {
   state: [],
   district: [],
+  filterStates: [],
   current_district: [
     {
       state: "",
@@ -28,6 +34,11 @@ export const appReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         current_district: setCurrentDist(action.payload, state.district),
+      };
+    case stateActionTypes.FILTER_STATE:
+      return {
+        ...state,
+        filterState: filterState(action.payload, state.state),
       };
     default:
       return state;

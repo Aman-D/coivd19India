@@ -22,6 +22,22 @@ const DailyArea = ({ categories, series }) => {
           blur: 10,
           opacity: 0.2,
         },
+        toolbar: {
+          show: true,
+          offsetX: 0,
+          offsetY: 0,
+          tools: {
+            download: true,
+            selection: true,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: true,
+            reset: true | '<img src="/static/icons/reset.png" width="20">',
+            customIcons: [],
+          },
+          autoSelected: "zoom",
+        },
       },
       colors: ["#EC7063", "#F4D03F", "#2ECC71"],
       dataLabels: {

@@ -5,11 +5,16 @@ import DailyArea from "./components/daily/daily.component";
 import DistrictArea from "./components/district/district.component";
 import StateArea from "./components/state/state.component";
 import Video from "./components/covid-video/video.component";
+import Footer from "./components/footer/footer.component";
+
 import { fetchData, fetchDailyData } from "./api/api";
 
 import { setData, setCurrentDistrict } from "./redux/app/app.action";
 import { setChartData } from "./redux/chart/chart.action";
 import "./App.scss";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 class App extends React.Component {
   async componentDidMount() {
@@ -34,6 +39,7 @@ class App extends React.Component {
         <div className="videoContainer">
           <Video />
         </div>
+        <Footer />
       </div>
     );
   }

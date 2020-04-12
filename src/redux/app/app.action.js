@@ -14,3 +14,8 @@ export const setCurrentDistrict = (state) => ({
   type: stateActionTypes.SET_CURRENT_DISTRICT,
   payload: state,
 });
+
+export const filterState = (search) => ({
+  type: stateActionTypes.FILTER_STATE,
+  payload: search,
+});

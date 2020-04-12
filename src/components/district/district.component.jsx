@@ -15,7 +15,13 @@ const DistrictArea = ({ current_state }) => {
         <h3 className="dist-title">{state}</h3>
         {District
           ? District.map(({ District, confirmed }) => (
-              <div className="dist-card" key={District}>
+              <div
+                className="dist-card"
+                key={District}
+                style={{
+                  backgroundColor: `rgba(235, 64, 52,${confirmed * 0.02})`,
+                }}
+              >
                 <h3>{District}</h3>
                 <span>Confirmed: {confirmed}</span>
               </div>
