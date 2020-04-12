@@ -23,3 +23,9 @@ The main work of this website is to work with Api's, collect and transform data 
 - There's no backend!! It's just a game of API
 - Exlopre the code, modify it, get inspired by it, or even make changes to this code.:)
 - Learn and Earn
+
+# Website Images
+
+![](./public/images/covid-1.png)
+![](./public/images/covid-2.png)
+![](./public/images/covid-3.png)
