@@ -8,18 +8,18 @@ import { createStructuredSelector } from "reselect";
 
 import {
   selectStates,
-  selectFIlteredState,
+  selectFilteredState,
 } from "../../redux/app/app.selector";
 import SearchBar from "../search-bar/searchBar.componenet";
 
-const StateArea = ({ filterState }) => {
+const StateArea = ({ filterStates, states }) => {
   return (
     <div className="state-container">
       <SearchBar className="search-container" />
       <div className="state">
-        {filterState.map((data, index) => (
-          <Card key={index} data={data} />
-        ))}
+        {filterStates.length !== 0
+          ? filterStates.map((data, index) => <Card key={index} data={data} />)
+          : states.map((data, index) => <Card key={index} data={data} />)}
       </div>
     </div>
   );
@@ -27,7 +27,7 @@ const StateArea = ({ filterState }) => {
 
 const mapStateToProps = createStructuredSelector({
   states: selectStates,
-  filterState: selectFIlteredState,
+  filterStates: selectFilteredState,
 });
 
 export default connect(mapStateToProps)(StateArea);

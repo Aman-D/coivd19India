@@ -8,7 +8,7 @@ export const selectCurrentDistricts = createSelector(
   (data) => data.current_district
 );
 
-export const selectFIlteredState = createSelector(
+export const selectFilteredState = createSelector(
   [States],
-  (data) => data.filterState
+  (data) => data.filterStates
 );
