@@ -38,7 +38,7 @@ export const appReducer = (state = INITIAL_STATE, action) => {
     case stateActionTypes.FILTER_STATE:
       return {
         ...state,
-        filterState: filterState(action.payload, state.state),
+        filterStates: filterState(action.payload, state.state),
       };
     default:
       return state;
