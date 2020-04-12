@@ -5,8 +5,13 @@ import { persistStore } from "redux-persist";
 
 //store expects an array of middelwares from redux
 const middelwares = [logger];
-
-const store = createStore(rootReducer, applyMiddleware(...middelwares));
+console.log(process.env.NODE_ENV);
+const store = createStore(
+  rootReducer,
+  process.env.NODE_ENV == "development"
+    ? applyMiddleware(...middelwares)
+    : applyMiddleware([])
+);
 const persistor = persistStore(store);
 //creates a new provider that wraps our application
 export { store, persistor };
